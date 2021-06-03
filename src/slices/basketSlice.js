@@ -1,23 +1,33 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
   items: [],
-};
+}
 
 export const basketSlice = createSlice({
-  name: "basket",
+  name: 'basket',
   initialState,
   reducers: {
     addToBasket: (state, action) => {
-    state.items = [...state.items, action.payload];
+      state.items = [...state.items, action.payload]
     },
-    removeFromBasket: (state, action) => {},
-  },
-});
+    removeFromBasket: (state, action) => {
+      const index = state.items.findIndex(
+        (basketItem) => basketItem.id === action.payload.id,
+      )
+      let newBasket = [...state.items]
 
-export const { addToBasket, removeFromBasket } = basketSlice.actions;
+      if (index >= 0) {
+        newBasket.splice(index, 1)
+      }
+      state.items = newBasket
+    },
+  },
+})
+
+export const { addToBasket, removeFromBasket } = basketSlice.actions
 
 // Selectors - This is how we pull information from the Global store slice
-export const selectItems = (state) => state.basket.items;
+export const selectItems = (state) => state.basket.items
 
-export default basketSlice.reducer;
+export default basketSlice.reducer
