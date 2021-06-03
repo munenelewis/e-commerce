@@ -15,7 +15,7 @@ function Product({ id, title, price, description, category, image }) {
   )
 
   const addItemToBasket = () => {
-    const product = { id, title, price, description, category, image }
+    const product = { id, title, price, description, category, image,hasPrime, rating}
     dispatch(addToBasket(product))
   }
   return (
@@ -40,7 +40,7 @@ function Product({ id, title, price, description, category, image }) {
 
       {hasPrime && (
         <div className="flex items-center space-x-2 -mt-5">
-          <img className="w-12" src="https://links.papareact.com/fdw" />
+          <img className="w-12 my-1" src="https://links.papareact.com/fdw" /> 
           <p className="text-xs text-green-500">Free Next-day Delivery</p>
         </div>
       )}
