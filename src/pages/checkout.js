@@ -15,8 +15,8 @@ function Checkout() {
             objectFit="contain"
           />
 
-          <div>
-            <h1> Your Shopping Basket</h1>
+          <div className='flex flex-col p-s space-y-10 bg-white-'>
+            <h1 className='text-3xl border-b pb-4'> Your Shopping Basket</h1>
           </div>
         </div>
         {/* right */}
@@ -26,3 +26,6 @@ function Checkout() {
 }
 
 export default Checkout
+
+
+ 
