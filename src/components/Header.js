@@ -34,7 +34,7 @@ function Header() {
         <div className="hidden sm:flex items-center h-10 rounded-md flex-grow bg-yellow-400 hover:bg-yellow-500 cursor-pointer">
           <input
             type="text"
-            className="p-2 h-full w-6 flex-grow flex-shrink rounded-l-md focus:outline-none p-4"
+            className="p-4 h-full w-6 flex-grow flex-shrink rounded-l-md focus:outline-none"
           />
           <SearchIcon className="h-12 p-4" />
         </div>
