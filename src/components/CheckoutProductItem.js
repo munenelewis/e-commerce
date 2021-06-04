@@ -56,7 +56,7 @@ function CheckoutProductItem({
         </div>
         <p className="text-sx my line-clamp-3">{description}</p>
 
-        <Currency quantity={price} currency={'KES'} />
+        <Currency quantity={Math.ceil(price  * 107.80)} currency={'KES'} />
         {hasPrime && (
           <div className="flex items-center spac-x-2">
             <img
